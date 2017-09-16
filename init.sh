@@ -1,1 +1,0 @@
-echo "Installing node_modules..." && cd cyberus && npm install && node_modules/@angular/cli/bin/ng serve & cd .. && echo "Install complete!"
