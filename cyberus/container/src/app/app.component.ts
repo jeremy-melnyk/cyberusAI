@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css', '../../node_modules/videogular2/fonts/videogular.css']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Welcome to CyberusAI';

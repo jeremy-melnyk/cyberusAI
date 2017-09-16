@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "./node_modules/videogular2/fonts/videogular.css",
         "styles.css"
       ],
       "scripts": [],
@@ -52,11 +53,6 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {},
-    "server": {
-      "port": 4200,
-      "host": "0.0.0.0",
-      "poll": 1000
-    }
+    "component": {}
   }
 }

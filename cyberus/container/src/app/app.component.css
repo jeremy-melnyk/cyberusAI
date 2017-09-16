@@ -32,8 +32,8 @@ body {
 
 #video-section {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    flex-direction: column;
+    width: 75%;
     height: 100%;
     border: 0.1em solid;
     border-radius: 0.5em;
@@ -47,23 +47,18 @@ body {
 
 #video-frame {
     width: 100%;
-    text-align: center;
-}
-
-#video-feed {
-    width: 100%;
     height: 100%;
 }
 
-.video-control {
-    margin: 1em;
+#playerOne, #playerTwo, #playerThree, #playerFour {
+    width: 100%;
 }
 
 #bot-section {    
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 25%;
     border: 0.1em solid;
     border-radius: 0.5em;
     margin: 0.2em;
