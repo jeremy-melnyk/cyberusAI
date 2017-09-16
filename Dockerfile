@@ -9,10 +9,10 @@ RUN mkdir server
 ENV NODE_ENV dev
 
 # Expose default nodejs port
-EXPOSE 8080/tcp
+EXPOSE 8080
 
 # Expose default angular port
-EXPOSE 4200/tcp
+EXPOSE 4200
 
 # Copy server files
 COPY ./server/container/package.json ./server/
@@ -21,11 +21,11 @@ COPY ./server/container/gulpfile.js ./server/
 # Copy cyberus files
 COPY ./cyberus/container/package.json ./cyberus/
 
-# Copy start script
-COPY ./init.sh ./
+# Copy scripts
+COPY ./run.sh ./
 
 # Add execute permissions
-RUN chmod ugo+x ./init.sh
+RUN chmod ugo+x ./run.sh
 
 # Mount client directories
 VOLUME ["./cyberus/"]
@@ -34,4 +34,4 @@ VOLUME ["./cyberus/"]
 VOLUME ["./server/"]
 
 # Build, watch, and run
-ENTRYPOINT /bin/bash
+ENTRYPOINT /bin/bash run.sh

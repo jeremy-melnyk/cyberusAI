@@ -1,0 +1,1 @@
+echo "Starting app..." && cd cyberus && npm install && node_modules/@angular/cli/bin/ng serve --host 0.0.0.0 --port 4200 --poll 1000

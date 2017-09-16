@@ -7,8 +7,9 @@ services:
     image: cyberus:1.0
     build: .
     ports:
-    - "8080:8080"
+    - "8080:8081"
     - "4200:4200"
+    - "49153:49153"
     volumes:
     - ./server/container:/app/server
     - node_modules_server:/app/server/node_modules
