@@ -1,0 +1,16 @@
+version: '3'
+volumes:
+  node_modules_server:
+  node_modules_cyberus:
+services:
+  cyberus:
+    image: cyberus:1.0
+    build: .
+    ports:
+    - "8080:8080"
+    - "4200:4200"
+    volumes:
+    - ./server/container:/app/server
+    - node_modules_server:/app/server/node_modules
+    - ./cyberus/container:/app/cyberus
+    - node_modules_cyberus:/app/cyberus/node_modules

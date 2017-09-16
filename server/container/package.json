@@ -1,0 +1,25 @@
+{
+  "name": "cyberus_server",
+  "version": "1.0.0",
+  "description": "Hack The North project",
+  "main": "build/server/index.js",
+  "scripts": {
+    "start": "node build/server/index.js",
+    "test": "echo 'No tests set up!'"
+  },
+  "author": "CheerfulDoods",
+  "license": "MIT",
+  "dependencies": {
+    "express": "latest"
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-babel": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-concat": "latest",
+    "gulp-nodemon": "latest",
+    "babel-core": "latest",
+    "babel-loader": "latest",
+    "babel-preset-env": "latest"
+  }
+}
