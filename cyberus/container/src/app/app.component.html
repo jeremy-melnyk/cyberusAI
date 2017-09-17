@@ -3,153 +3,146 @@
 <div class="#column-container">
   <div id="main-title">
     <h1>
-      Welcome to {{title}}!
+      {{title}}
     </h1>
-    <img id="logo" src="assets/cyberus.png" />
+    <img id="logo" src="assets/cyberus2.png" />
   </div>
+  <button (click)="testWatson()">Click Here</button>
   <div class="row-container">
     <div id="video-section">
       <div id="video-frame">
         <!-- Add video UI elements here -->
         <!-- Player One -->
-        <div class="video-control">
-          <vg-player>
-            <vg-overlay-play></vg-overlay-play>
-            <vg-buffering></vg-buffering>
+        <vg-player>
+          <vg-overlay-play></vg-overlay-play>
+          <vg-buffering></vg-buffering>
 
-            <vg-scrub-bar>
-              <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-              <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-            </vg-scrub-bar>
+          <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+          </vg-scrub-bar>
 
-            <vg-controls>
-              <vg-play-pause></vg-play-pause>
-              <vg-playback-button></vg-playback-button>
+          <vg-controls>
+            <vg-play-pause></vg-play-pause>
+            <vg-playback-button></vg-playback-button>
 
-              <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
 
-              <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
 
-              <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-              <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
 
-              <vg-track-selector></vg-track-selector>
-              <vg-mute></vg-mute>
-              <vg-volume></vg-volume>
+            <vg-track-selector></vg-track-selector>
+            <vg-mute></vg-mute>
+            <vg-volume></vg-volume>
 
-              <vg-fullscreen></vg-fullscreen>
-            </vg-controls>
+            <vg-fullscreen></vg-fullscreen>
+          </vg-controls>
 
-            <video #mediaOne [vgMedia]="mediaOne" id="playerOne" preload="auto" crossorigin>
-              <source *ngFor="let video of sources" [src]="video.src" [type]="video.type">
-            </video>
-          </vg-player>
-        </div>
+          <video #mediaOne [vgMedia]="mediaOne" id="playerOne" preload="auto" crossorigin>
+            <source [src]="sources[0].src" [type]="sources[0].type">
+          </video>
+        </vg-player>
 
         <!-- Player Two -->
-        <div class="video-control">
-          <vg-player>
-            <vg-overlay-play></vg-overlay-play>
-            <vg-buffering></vg-buffering>
+        <vg-player>
+          <vg-overlay-play></vg-overlay-play>
+          <vg-buffering></vg-buffering>
 
-            <vg-scrub-bar>
-              <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-              <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-            </vg-scrub-bar>
+          <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+          </vg-scrub-bar>
 
-            <vg-controls>
-              <vg-play-pause></vg-play-pause>
-              <vg-playback-button></vg-playback-button>
+          <vg-controls>
+            <vg-play-pause></vg-play-pause>
+            <vg-playback-button></vg-playback-button>
 
-              <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
 
-              <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
 
-              <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-              <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
 
-              <vg-track-selector></vg-track-selector>
-              <vg-mute></vg-mute>
-              <vg-volume></vg-volume>
+            <vg-track-selector></vg-track-selector>
+            <vg-mute></vg-mute>
+            <vg-volume></vg-volume>
 
-              <vg-fullscreen></vg-fullscreen>
-            </vg-controls>
+            <vg-fullscreen></vg-fullscreen>
+          </vg-controls>
 
-            <video #mediaTwo [vgMedia]="mediaTwo" id="playerTwo" preload="auto" crossorigin>
-              <source *ngFor="let video of sources" [src]="video.src" [type]="video.type">
-            </video>
-          </vg-player>
-        </div>
+          <video #mediaTwo [vgMedia]="mediaTwo" id="playerTwo" preload="auto" crossorigin>
+            <source [src]="sources[1].src" [type]="sources[1].type">
+          </video>
+        </vg-player>
 
         <!-- Player Three -->
-        <div class="video-control">
-          <vg-player>
-            <vg-overlay-play></vg-overlay-play>
-            <vg-buffering></vg-buffering>
+        <vg-player>
+          <vg-overlay-play></vg-overlay-play>
+          <vg-buffering></vg-buffering>
 
-            <vg-scrub-bar>
-              <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-              <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-            </vg-scrub-bar>
+          <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+          </vg-scrub-bar>
 
-            <vg-controls>
-              <vg-play-pause></vg-play-pause>
-              <vg-playback-button></vg-playback-button>
+          <vg-controls>
+            <vg-play-pause></vg-play-pause>
+            <vg-playback-button></vg-playback-button>
 
-              <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
 
-              <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
 
-              <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-              <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
 
-              <vg-track-selector></vg-track-selector>
-              <vg-mute></vg-mute>
-              <vg-volume></vg-volume>
+            <vg-track-selector></vg-track-selector>
+            <vg-mute></vg-mute>
+            <vg-volume></vg-volume>
 
-              <vg-fullscreen></vg-fullscreen>
-            </vg-controls>
+            <vg-fullscreen></vg-fullscreen>
+          </vg-controls>
 
-            <video #mediaThree [vgMedia]="mediaThree" id="playerThree" preload="auto" crossorigin>
-              <source *ngFor="let video of sources" [src]="video.src" [type]="video.type">
-            </video>
-          </vg-player>
-        </div>
+          <video #mediaThree [vgMedia]="mediaThree" id="playerThree" preload="auto" crossorigin>
+            <source *ngFor="let video of sources" [src]="video.src" [type]="video.type">
+          </video>
+        </vg-player>
 
         <!-- Player Four -->
-        <div class="video-control">
-          <vg-player>
-            <vg-overlay-play></vg-overlay-play>
-            <vg-buffering></vg-buffering>
+        <vg-player>
+          <vg-overlay-play></vg-overlay-play>
+          <vg-buffering></vg-buffering>
 
-            <vg-scrub-bar>
-              <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-              <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-            </vg-scrub-bar>
+          <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+          </vg-scrub-bar>
 
-            <vg-controls>
-              <vg-play-pause></vg-play-pause>
-              <vg-playback-button></vg-playback-button>
+          <vg-controls>
+            <vg-play-pause></vg-play-pause>
+            <vg-playback-button></vg-playback-button>
 
-              <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
 
-              <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
 
-              <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-              <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
 
-              <vg-track-selector></vg-track-selector>
-              <vg-mute></vg-mute>
-              <vg-volume></vg-volume>
+            <vg-track-selector></vg-track-selector>
+            <vg-mute></vg-mute>
+            <vg-volume></vg-volume>
 
-              <vg-fullscreen></vg-fullscreen>
-            </vg-controls>
+            <vg-fullscreen></vg-fullscreen>
+          </vg-controls>
 
-            <video #mediaFour [vgMedia]="mediaFour" id="playerFour" preload="auto" crossorigin>
-              <source *ngFor="let video of sources" [src]="video.src" [type]="video.type">
-            </video>
-          </vg-player>
-        </div>
+          <video #mediaFour [vgMedia]="mediaFour" id="playerFour" preload="auto" crossorigin>
+            <source *ngFor="let video of sources" [src]="video.src" [type]="video.type">
+          </video>
+        </vg-player>
       </div>
     </div>
     <div id="bot-section">
