@@ -19,7 +19,7 @@ export class AppComponent {
         type: "video/mp4"
       },
       {
-        src: "assets/videos/VIRAT_S_000201_00_000018_000380.mp4",
+        src: "assets/videos/out.mp4",
         type: "video/mp4"
       }
     ];

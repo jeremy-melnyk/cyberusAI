@@ -41,7 +41,7 @@
           </vg-controls>
 
           <video #mediaOne [vgMedia]="mediaOne" id="playerOne" preload="auto" crossorigin>
-            <source *ngFor="let video of sources" [src]="video.src" [type]="video.type">
+            <source [src]="sources[0].src" [type]="sources[0].type">
           </video>
         </vg-player>
 
@@ -74,7 +74,7 @@
           </vg-controls>
 
           <video #mediaTwo [vgMedia]="mediaTwo" id="playerTwo" preload="auto" crossorigin>
-            <source *ngFor="let video of sources" [src]="video.src" [type]="video.type">
+            <source [src]="sources[1].src" [type]="sources[1].type">
           </video>
         </vg-player>
 
