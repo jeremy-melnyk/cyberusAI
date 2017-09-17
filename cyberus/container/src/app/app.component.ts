@@ -9,7 +9,7 @@ import { VisualRecognitionService } from './visual-recognition.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Welcome to CyberusAI';
+  title = 'CyberusAI';
   sources: Array<Object>;
 
   constructor(private visualRecognitionService: VisualRecognitionService) {
